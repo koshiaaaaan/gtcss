@@ -66,80 +66,80 @@
 * 親モジュールに依存する特徴には `in-` を、独立したモジュールに対して扱う場合には `at-` を使用します。
 * 単語同士は `_` 、やキャメルケース等で繋げます。 `-` 以外であれば何を使用しても構いませんが、いずれかに統一しなければなりません。
 * モジュールは重ねてはいけません。
-  ```html
-  <div class="m-media m-profile">
-  </div>
-  ```
-  この場合、片方を残し、もう片方を特徴として書くことができます。
-  ```html
-  <div class="m-media at-profile">
-  </div>
-  ```
-  ```scss
-  .m-media.at-profile {
-  }
-  ```
+```html
+<div class="m-media m-profile">
+</div>
+```
+この場合、片方を残し、もう片方を特徴として書くことができます。
+```html
+<div class="m-media at-profile">
+</div>
+```
+```scss
+.m-media.at-profile {
+}
+```
 * モジュールは別のモジュールを内包することが可能です。
 * 子モジュールが親モジュールに依存する（親モジュールから子モジュールを上書きする）事を許容しますが、モジュールは独立して使用できなければならない為（設計ルール参照）、特徴を用いて実装する必要があります。  
-  小モジュールが親モジュールを上書きすることは詳細度の性質上できません。  
-  以下に例を示します。
-  ```html
-  <div class="m-article">
-    <div class="m-section in-article section">
-      <h1 class="heading"></h1>
-    </div>
+小モジュールが親モジュールを上書きすることは詳細度の性質上できません。  
+以下に例を示します。
+```html
+<div class="m-article">
+  <div class="m-section in-article section">
+    <h1 class="heading"></h1>
   </div>
-  <div class="m-aside">
-    <div class="m-section in-aside section">
-    </div>
+</div>
+<div class="m-aside">
+  <div class="m-section in-aside section">
   </div>
-  ```
-  ```scss
-  .m-section {
-    padding: 10px;
+</div>
+```
+```scss
+.m-section {
+  padding: 10px;
+  > .heading {
+    font-size: 12px;
+  }
+}
+.m-article {
+  > .section {
+    & + .section {
+      margin-top: 10px;
+    }
+  }
+  > .m-section.in-article {
     > .heading {
-      font-size: 12px;
+      font-size: 16px;
     }
   }
-  .m-article {
-    > .section {
-      & + .section {
-        margin-top: 10px;
-      }
-    }
-    > .m-section.in-article {
-      > .heading {
-        font-size: 16px;
-      }
+}
+.m-aside {
+  > .section {
+    & + .section {
+      margin-top: 5px;
     }
   }
-  .m-aside {
-    > .section {
-      & + .section {
-        margin-top: 5px;
-      }
-    }
-    > .m-section.in-aside {
-      padding: 5px;
-    }
+  > .m-section.in-aside {
+    padding: 5px;
   }
-  ```
-  こうすることで、 `.m-section` モジュールは独立して存在し、それぞれのモジュールを親として持つ場合の振る舞いも変えることが出来ます。  
-  また、上記の `.section` のように、モジュールに依存しないスタイルはノードで実装可能です。
+}
+```
+こうすることで、 `.m-section` モジュールは独立して存在し、それぞれのモジュールを親として持つ場合の振る舞いも変えることが出来ます。  
+また、上記の `.section` のように、モジュールに依存しないスタイルはノードで実装可能です。
 
 ### 設計ルール
 * モジュールはドキュメント内のどこで使用しても同じ見た目にならなければなりません。
 * 特徴が設定されていないモジュールは `at-default` が省略されているものと考えます。  
 厳密に書くと以下のような記述になりますが、 `at-default` を書く必要がないのは一目瞭然です。
-  ```html
-  <div class="m-media at-default">
-  </div>
-  ```
-  ```scss
-  .m-media,
-  .m-media.at-default {
-  }
-  ```
+```html
+<div class="m-media at-default">
+</div>
+```
+```scss
+.m-media,
+.m-media.at-default {
+}
+```
 
 ### 共通ルール
 * これら全てのルールは厳守する必要はありません。
