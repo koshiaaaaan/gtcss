@@ -1,0 +1,29 @@
+//==============================================================================
+// Block
+//==============================================================================
+/**
+ * m-container
+ **/
+.m-container {
+  padding: 10px;
+  > .title {
+    border-bottom: 3px solid #f1f1f1;
+    margin-bottom: 10px;
+    font-weight: 300;
+    &::before {
+      content: "Title:";
+      font-size: px2rem(8px);
+      font-weight: 300;
+      margin-right: 5px;
+    }
+  }
+}
+
+/**
+ * m-preview
+ **/
+.m-preview {
+  padding: 30px 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+}

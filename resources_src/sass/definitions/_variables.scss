@@ -1,0 +1,33 @@
+//==========================================
+// Color palette
+//==========================================
+
+//==========================================
+// sanitize.scss
+//==========================================
+//$root-background-color: #FFFFFF !default;
+$root-background-color: #222F3E !default;
+$root-box-sizing: border-box !default;
+//$root-color: #000000 !default;
+$root-color: #1F2121 !default;
+$root-cursor: default !default;
+//$root-font-family: 'Proxima Nova W01', Helvetica, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic Pro', 'Noto Sans CJK JP', NotoSansCJKjp-Light, 'Noto Sans CJK JP Light', 'Noto Sans CJK JP', 'Noto Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+$root-font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$root-font-size: 100% !default;
+$root-line-height: 1.5 !default;
+$root-text-rendering: optimizeLegibility !default;
+
+$anchor-text-decoration: none !default;
+$background-repeat: no-repeat !default;
+$form-element-background-color: transparent !default;
+$form-element-min-height: if(unitless($root-line-height), #{$root-line-height}em, if(unit($root-line-height) != '%', $root-line-height, null)) !default;
+$media-element-vertical-align: middle !default;
+$monospace-font-family: Consolas, Monaco, 'Andale Mono', monospace, 'Noto Sans CJK JP', 'Noto Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
+$nav-list-style: none !default;
+$selection-background-color: #B3D4FC !default;
+$selection-color: #FFFFFF !default;
+$selection-text-shadow: none !default;
+$small-font-size: 75% !default;
+$table-border-collapse: collapse !default;
+$table-border-spacing: 0 !default;
+$textarea-resize: vertical !default;

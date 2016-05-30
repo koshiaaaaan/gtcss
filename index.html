@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>&gt;.css</title>
+<link rel="stylesheet" href="resources/css/style.css" />
+<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/railscasts.min.css" />-->
+<link rel="stylesheet" href="resources/vendor/highlight/styles/railscasts.css" />
+<style>
+</style>
+</head>
+<body class="m-root">
+
+<header class="header">
+  <h1 class="title"><i class="m-icon at-code"></i> &gt;.css</h1>
+</header>
+
+<div class="body">
+  <nav class="side">
+    <ul class="m-navigation at-tree">
+      <li class="item">
+        <a class="target" href="#head100">
+          <span class="title"><i class="m-icon at-pen"></i> &gt;.cssとは</i></span>
+        </a>
+        <ul class="m-navigation at-tree in-navigation">
+          <li class="item">
+            <a class="target" href="#head110">
+              <span class="title"><i class="m-icon at-pen"></i> どんなの？</span>
+            </a>
+          </li>
+          <li class="item">
+            <a class="target" href="#head120">
+              <span class="title"><i class="m-icon at-pen"></i> 何が嬉しいの？</span>
+            </a>
+          </li>
+          <li class="item">
+            <a class="target" href="#head130">
+              <span class="title"><i class="m-icon at-pen"></i> 悪いところは？</span>
+            </a>
+          </li>
+          <li class="item">
+            <a class="target" href="#head140">
+              <span class="title"><i class="m-icon at-pen"></i> 他の設計手段じゃいかんのけ？</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="item">
+        <a class="target" href="#head200">
+          <span class="title"><i class="m-icon at-pen"></i> ルール</i></span>
+        </a>
+        <ul class="m-navigation at-tree in-navigation">
+          <li class="item">
+            <a class="target" href="#head210">
+              <span class="title"><i class="m-icon at-pen"></i> ドメイン</span>
+            </a>
+          </li>
+          <li class="item">
+            <a class="target" href="#head220">
+              <span class="title"><i class="m-icon at-pen"></i> コーディング規約</span>
+            </a>
+          </li>
+          <li class="item">
+            <a class="target" href="#head230">
+              <span class="title"><i class="m-icon at-pen"></i> 設計ルール</span>
+            </a>
+          </li>
+          <li class="item">
+            <a class="target" href="#head240">
+              <span class="title"><i class="m-icon at-pen"></i> 共通ルール</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="item">
+        <a class="target" href="#head300">
+          <span class="title"><i class="m-icon at-pen"></i> 実装例</i></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main m-document">
+    <h1 id="head000">&gt;.css</h1>
+
+    <h2 id="head100">&gt;.cssとは</h2>
+
+    <p>直下セレクタ（子セレクタ）を用いたCSS設計の考え方です。<br />
+    私の開発するプロダクトはこの設計に基づいて作ってますよという事を参照させる為のオレオレCSS設計書となります。<br />
+    なので割りとテキトーなこと書いてたりするかもしれません。</p>
+
+    <h3 id="head110">どんなの？</h3>
+
+    <p>こんなの。</p>
+
+<pre class="highlight"><code class="html">&lt;div class="m-media"&gt;
+  &lt;img class="image" src="image.jpg" alt="画像" /&gt;
+  &lt;div class="body"&gt;
+    &lt;h1 class="title"&gt;タイトル&lt;/h1&gt;
+    &lt;p class="lead"&gt;リード文&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<pre class="highlight"><code class="scss">.m-media {
+  &gt; .image {
+  }
+  &gt; .body {
+    &gt; .title {
+    }
+    &gt; .lead {
+    }
+  }
+}</code></pre>
+
+    <h3 id="head120">何が嬉しいの？</h3>
+
+    <ul>
+      <li>HTMLの構造と同じ構造で書ける。ワカリヤスイ。※ただしプリプロセッサに限る。</li>
+      <li>一つの要素郡（モジュール）を一塊で扱える。実際使いやすい。</li>
+      <li>同じクラス名でもスタイル汚染を気にせず使える。（モジュール名を同じにしない限り）</li>
+      <li>今のところ破綻したことない。今のところ。</li>
+    </ul>
+
+    <h3 id="head130">悪いところは？</h3>
+
+    <ul>
+      <li>子供要素のクラス名から何のモジュールに依存しているかわからない。</li>
+      <li>ネスト前提。</li>
+      <li>他人がルールを把握していないとすぐ壊れる。</li>
+      <li>他にもある思うんで、気づいたら書き足しますよって、堪忍してつかーさい。</li>
+    </ul>
+
+    <h3 id="head140">他の設計手段じゃいかんのけ？</h3>
+
+    <p>ええんちゃう？</p>
+
+    <p>個人的にやたらクラス名が長くなったりする設計やら命名規約が肌に合わなかったので、自分にあった自分ルールを作っただけですしおすし。</p>
+
+    <h2 id="head200">ルール</h2>
+
+    <h3 id="head210">ドメイン</h3>
+
+    <ul>
+      <li><code>&gt;.css</code> は <code>グレーターザンドットシーエスエス(greater than dot css)</code> あるいはドットを省略して、 <code>グレーターザンシーエスエス(greater than css)</code> と読みます。</li>
+      <li>一塊の要素郡を <code>モジュール(module)</code> と呼びます。</li>
+      <li>モジュールを構成する下位クラスを <code>ノード(node)</code> と呼びます。</li>
+      <li>モジュールを配置する場所によって、見た目を変える為のクラスを <code>特徴(character)</code> と呼びます。</li>
+    </ul>
+
+    <h3 id="head220">コーディング規約</h3>
+
+    <ul>
+      <li>原則的に全てクラスで記述しなければなりません。</li>
+      <li>原則的に <code>!important</code> は使用してはいけません。</li>
+      <li>モジュールのルートは <code>m-</code> のプレフィックスから開始しなければなりません。</li>
+      <li>モジュール名はユニークでなければなりません。</li>
+      <li>ノードはモジュールに内包されなければなりません。</li>
+      <li>ノードにプレフィックスはありません。</li>
+      <li>特徴は <code>in-</code> 、 <code>at-</code> のプレフィックスから開始しなければなりません。</li>
+      <li>特徴はモジュールのマルチクラスとして使用しなければなりません。</li>
+      <li>親モジュールに依存する特徴には <code>in-</code> を、独立したモジュールに対して扱う場合には <code>at-</code> を使用します。</li>
+      <li>単語同士は <code>_</code> 、やキャメルケース等で繋げます。 <code>-</code> 以外であれば何を使用しても構いませんが、いずれかに統一しなければなりません。</li>
+      <li>
+        <p>モジュールは重ねてはいけません。</p>
+<pre class="highlight"><code class="html">&lt;div class="m-media m-profile"&gt;
+&lt;/div&gt;</code></pre>
+
+        <p>この場合、片方を残し、もう片方を特徴として書くことができます。</p>
+<pre class="highlight"><code class="html">&lt;div class="m-media at-profile"&gt;
+&lt;/div&gt;</code></pre>
+<pre class="highlight"><code class="scss">.m-media.at-profile {
+}</code></pre>
+
+      </li>
+      <li>モジュールは別のモジュールを内包することが可能です。</li>
+      <li>
+        <p>子モジュールが親モジュールに依存する（親モジュールから子モジュールを上書きする）事を許容しますが、モジュールは独立して使用できなければならない為（設計ルール参照）、特徴を用いて実装する必要があります。<br>
+        小モジュールが親モジュールを上書きすることは詳細度の性質上できません。<br>
+        以下に例を示します。</p>
+
+<pre class="highlight"><code class="html">&lt;div class="m-article"&gt;
+  &lt;div class="m-section in-article section"&gt;
+    &lt;h1 class="heading"&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="m-aside"&gt;
+  &lt;div class="m-section in-aside section"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre class="highlight"><code class="scss">.m-section {
+  padding: 10px;
+  &gt; .heading {
+    font-size: 12px;
+  }
+}
+.m-article {
+  &gt; .section {
+    & + .section {
+      margin-top: 10px;
+    }
+  }
+  &gt; .m-section.in-article {
+    &gt; .heading {
+      font-size: 16px;
+    }
+  }
+}
+.m-aside {
+  &gt; .section {
+    & + .section {
+      margin-top: 5px;
+    }
+  }
+  &gt; .m-section.in-aside {
+    padding: 5px;
+  }
+}</code></pre>
+
+        <p>こうすることで、 <code>.m-section</code> モジュールは独立して存在し、それぞれのモジュールを親として持つ場合の振る舞いも変えることが出来ます。<br>
+        また、上記の <code>.section</code> のように、モジュールに依存しないスタイルはノードで実装可能です。</p>
+      </li>
+    </ul>
+
+    <h3 id="head230">設計ルール</h3>
+
+    <ul>
+      <li>モジュールはドキュメント内のどこで使用しても同じ見た目にならなければなりません。</li>
+      <li>
+        <p>特徴が設定されていないモジュールは <code>at-default</code> が省略されているものと考えます。<br>
+        厳密に書くと以下のような記述になりますが、 <code>at-default</code> を書く必要がないのは一目瞭然です。  </p>
+
+<pre class="highlight"><code class="html">&lt;div class="m-media at-default"&gt;
+&lt;/div&gt;</code></pre>
+<pre class="highlight"><code class="scss">.m-media,
+.m-media.at-default {
+}</code></pre>
+
+      </li>
+    </ul>
+
+    <h3 id="head240">共通ルール</h3>
+
+    <ul>
+      <li>これら全てのルールは厳守する必要はありません。</li>
+    </ul>
+
+    <h2 id="head300">実装例</h2>
+
+    <ul>
+      <li>ここ</li>
+      <li>準備中</li>
+    </ul>
+  </main>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/flexibility/1.0.6/flexibility.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>-->
+<script src="resources/vendor/highlight/highlight.pack.js"></script>
+<script src="resources/js/main.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

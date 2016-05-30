@@ -1,0 +1,160 @@
+.m-document {
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+  cursor: auto;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  a {
+    color: #4183C4;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+  }
+  h1 {
+    font-size: px2rem(36px);
+    border-bottom: 6px double #DBDBDB;
+  }
+  h2 {
+    font-size: px2rem(32px);
+    border-bottom: 2px solid #DBDBDB;
+  }
+  h3 {
+    font-size: px2rem(28px);
+    border-bottom: 1px dashed #ACACAC;
+  }
+  h4 { font-size: px2rem(24px); }
+  h5 { font-size: px2rem(20px); }
+  h6 { font-size: px2rem(16px); }
+
+  p, blockquote, ul, ol, dl, table, pre {
+    margin: 15px 0;
+  }
+
+  hr {
+    border-bottom: 1px solid #ACACAC;
+    padding: 0;
+  }
+
+  ul, ol {
+    padding-left: 30px;
+  }
+  ul :first-child,
+  ol :first-child {
+    margin-top: 0;
+  }
+  ul :last-child,
+  ol :last-child {
+    margin-bottom: 0;
+  }
+
+  dl {
+    padding: 0;
+    dt {
+      font-size: 14px;
+      font-weight: bold;
+      font-style: italic;
+      padding: 0;
+      margin: 15px 0 5px;
+      &:first-child {
+        padding: 0;
+      }
+      > :first-child {
+        margin-top: 0;
+      }
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+    dd {
+      margin: 0 0 15px;
+      padding: 0 15px;
+      > :first-child {
+        margin-top: 0;
+      }
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid #DBDBDB;
+    padding: 0 15px;
+    color: #777777;
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    padding: 0;
+    tr {
+      border-top: 1px solid #DBDBDB;
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      &:nth-child(2n) {
+        background-color: #FAFAFA;
+      }
+      th, td {
+        border: 1px solid #DBDBDB;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px;
+
+        :first-child {
+          margin-top: 0;
+        }
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+  pre {
+    font-size: px2rem(13px);
+    line-height: 1.5em;
+    overflow: auto;
+    border-radius: 3px;
+    letter-spacing: 0;
+  }
+  code {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border-radius: 3px;
+    letter-spacing: 0;
+  }
+  pre code {
+    margin: 0;
+    padding: 6px 10px;
+    white-space: pre;
+    border: none;
+  }
+  pre:not([class]) {
+    padding: 6px 10px;
+    background-color: #FAFAFA;
+    border: 1px solid #DBDBDB;
+  }
+  code:not([class]) {
+    background-color: #FAFAFA;
+    border: 1px solid #DBDBDB;
+  }
+  pre:not([class]) code:not([class]) {
+    background: transparent;
+  }
+}

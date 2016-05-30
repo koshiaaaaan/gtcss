@@ -1,0 +1,65 @@
+//==============================================================================
+// Navigation
+//==============================================================================
+/**
+ * m-navigation
+ **/
+.m-navigation.at-tree {
+  list-style: none;
+  position: relative;
+  padding: 0 10px 0 5px;
+
+  > .item {
+    padding-left: 17px;
+    font-size: px2rem(14px);
+    white-space: nowrap;
+
+    > .target {
+      display: inline-block;
+      line-height: 2em;
+      height: inherit;
+      cursor: pointer;
+      > .title {
+        position: relative;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2em;
+      }
+      &:hover {
+        &::before {
+          border-top: 1px solid #DBDBDB;
+          border-bottom: 1px solid #DBDBDB;
+          background-color: #FAFAFA;
+        }
+      }
+    }
+
+    &[data-status~="active"] {
+      > .target {
+        position: relative;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2em;
+        border-top: 1px solid #DBDBDB;
+        border-bottom: 1px solid #DBDBDB;
+        background-color: #FAFAFA;
+      }
+    }
+
+    > .m-navigation.at-tree.in-navigation {
+      position: static;
+      padding: 0;
+      > .item {
+        padding-left: 17px;
+      }
+    }
+  }
+}
