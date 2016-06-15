@@ -1,0 +1,231 @@
+$font-path: "." !default;
+$icon-version:   "c5a1d52cb40008f6d4ed65bf3f12d508b2fe8c88";
+
+@font-face {
+  font-family: 'octicons';
+  src: url('#{$font-path}/octicons.eot?#iefix&v=#{$icon-version}') format('embedded-opentype'),
+       url('#{$font-path}/octicons.woff?v=#{$icon-version}') format('woff'),
+       url('#{$font-path}/octicons.ttf?v=#{$icon-version}') format('truetype'),
+       url('#{$font-path}/octicons.svg?v=#{$icon-version}#octicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// .octicon is optimized for 16px.
+// .mega-octicon is optimized for 32px but can be used larger.
+
+.m-icon {
+  &.at-octicon {
+    font: normal normal normal 16px/1 octicons;
+    display: inline-block;
+    text-decoration: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &.at-large {
+      font-size: 32px;
+    }
+
+    &.at-alert:before { content: '\f02d'; }
+    &.at-arrow-down:before { content: '\f03f'; }
+    &.at-arrow-left:before { content: '\f040'; }
+    &.at-arrow-right:before { content: '\f03e'; }
+    &.at-arrow-small-down:before { content: '\f0a0'; }
+    &.at-arrow-small-left:before { content: '\f0a1'; }
+    &.at-arrow-small-right:before { content: '\f071'; }
+    &.at-arrow-small-up:before { content: '\f09f'; }
+    &.at-arrow-up:before { content: '\f03d'; }
+    &.at-microscope:before,
+    &.at-beaker:before { content: '\f0dd'; }
+    &.at-bell:before { content: '\f0de'; }
+    &.at-bold:before { content: '\f0e2'; }
+    &.at-book:before { content: '\f007'; }
+    &.at-bookmark:before { content: '\f07b'; }
+    &.at-briefcase:before { content: '\f0d3'; }
+    &.at-broadcast:before { content: '\f048'; }
+    &.at-browser:before { content: '\f0c5'; }
+    &.at-bug:before { content: '\f091'; }
+    &.at-calendar:before { content: '\f068'; }
+    &.at-check:before { content: '\f03a'; }
+    &.at-checklist:before { content: '\f076'; }
+    &.at-chevron-down:before { content: '\f0a3'; }
+    &.at-chevron-left:before { content: '\f0a4'; }
+    &.at-chevron-right:before { content: '\f078'; }
+    &.at-chevron-up:before { content: '\f0a2'; }
+    &.at-circle-slash:before { content: '\f084'; }
+    &.at-circuit-board:before { content: '\f0d6'; }
+    &.at-clippy:before { content: '\f035'; }
+    &.at-clock:before { content: '\f046'; }
+    &.at-cloud-download:before { content: '\f00b'; }
+    &.at-cloud-upload:before { content: '\f00c'; }
+    &.at-code:before { content: '\f05f'; }
+    &.at-comment-add:before,
+    &.at-comment:before { content: '\f02b'; }
+    &.at-comment-discussion:before { content: '\f04f'; }
+    &.at-credit-card:before { content: '\f045'; }
+    &.at-dash:before { content: '\f0ca'; }
+    &.at-dashboard:before { content: '\f07d'; }
+    &.at-database:before { content: '\f096'; }
+    &.at-clone:before,
+    &.at-desktop-download:before { content: '\f0dc'; }
+    &.at-device-camera:before { content: '\f056'; }
+    &.at-device-camera-video:before { content: '\f057'; }
+    &.at-device-desktop:before { content: '\f27c'; }
+    &.at-device-mobile:before { content: '\f038'; }
+    &.at-diff:before { content: '\f04d'; }
+    &.at-diff-added:before { content: '\f06b'; }
+    &.at-diff-ignored:before { content: '\f099'; }
+    &.at-diff-modified:before { content: '\f06d'; }
+    &.at-diff-removed:before { content: '\f06c'; }
+    &.at-diff-renamed:before { content: '\f06e'; }
+    &.at-ellipsis:before { content: '\f09a'; }
+    &.at-eye-unwatch:before,
+    &.at-eye-watch:before,
+    &.at-eye:before { content: '\f04e'; }
+    &.at-file-binary:before { content: '\f094'; }
+    &.at-file-code:before { content: '\f010'; }
+    &.at-file-directory:before { content: '\f016'; }
+    &.at-file-media:before { content: '\f012'; }
+    &.at-file-pdf:before { content: '\f014'; }
+    &.at-file-submodule:before { content: '\f017'; }
+    &.at-file-symlink-directory:before { content: '\f0b1'; }
+    &.at-file-symlink-file:before { content: '\f0b0'; }
+    &.at-file-text:before { content: '\f011'; }
+    &.at-file-zip:before { content: '\f013'; }
+    &.at-flame:before { content: '\f0d2'; }
+    &.at-fold:before { content: '\f0cc'; }
+    &.at-gear:before { content: '\f02f'; }
+    &.at-gift:before { content: '\f042'; }
+    &.at-gist:before { content: '\f00e'; }
+    &.at-gist-secret:before { content: '\f08c'; }
+    &.at-git-branch-create:before,
+    &.at-git-branch-delete:before,
+    &.at-git-branch:before { content: '\f020'; }
+    &.at-git-commit:before { content: '\f01f'; }
+    &.at-git-compare:before { content: '\f0ac'; }
+    &.at-git-merge:before { content: '\f023'; }
+    &.at-git-pull-request-abandoned:before,
+    &.at-git-pull-request:before { content: '\f009'; }
+    &.at-globe:before { content: '\f0b6'; }
+    &.at-graph:before { content: '\f043'; }
+    &.at-heart:before { content: '\2665'; }
+    &.at-history:before { content: '\f07e'; }
+    &.at-home:before { content: '\f08d'; }
+    &.at-horizontal-rule:before { content: '\f070'; }
+    &.at-hubot:before { content: '\f09d'; }
+    &.at-inbox:before { content: '\f0cf'; }
+    &.at-info:before { content: '\f059'; }
+    &.at-issue-closed:before { content: '\f028'; }
+    &.at-issue-opened:before { content: '\f026'; }
+    &.at-issue-reopened:before { content: '\f027'; }
+    &.at-italic:before { content: '\f0e4'; }
+    &.at-jersey:before { content: '\f019'; }
+    &.at-key:before { content: '\f049'; }
+    &.at-keyboard:before { content: '\f00d'; }
+    &.at-law:before { content: '\f0d8'; }
+    &.at-light-bulb:before { content: '\f000'; }
+    &.at-link:before { content: '\f05c'; }
+    &.at-link-external:before { content: '\f07f'; }
+    &.at-list-ordered:before { content: '\f062'; }
+    &.at-list-unordered:before { content: '\f061'; }
+    &.at-location:before { content: '\f060'; }
+    &.at-gist-private:before,
+    &.at-mirror-private:before,
+    &.at-git-fork-private:before,
+    &.at-lock:before { content: '\f06a'; }
+    &.at-logo-gist:before { content: '\f0ad'; }
+    &.at-logo-github:before { content: '\f092'; }
+    &.at-mail:before { content: '\f03b'; }
+    &.at-mail-read:before { content: '\f03c'; }
+    &.at-mail-reply:before { content: '\f051'; }
+    &.at-mark-github:before { content: '\f00a'; }
+    &.at-markdown:before { content: '\f0c9'; }
+    &.at-megaphone:before { content: '\f077'; }
+    &.at-mention:before { content: '\f0be'; }
+    &.at-milestone:before { content: '\f075'; }
+    &.at-mirror-public:before,
+    &.at-mirror:before { content: '\f024'; }
+    &.at-mortar-board:before { content: '\f0d7'; }
+    &.at-mute:before { content: '\f080'; }
+    &.at-no-newline:before { content: '\f09c'; }
+    &.at-octoface:before { content: '\f008'; }
+    &.at-organization:before { content: '\f037'; }
+    &.at-package:before { content: '\f0c4'; }
+    &.at-paintcan:before { content: '\f0d1'; }
+    &.at-pencil:before { content: '\f058'; }
+    &.at-person-add:before,
+    &.at-person-follow:before,
+    &.at-person:before { content: '\f018'; }
+    &.at-pin:before { content: '\f041'; }
+    &.at-plug:before { content: '\f0d4'; }
+    &.at-repo-create:before,
+    &.at-gist-new:before,
+    &.at-file-directory-create:before,
+    &.at-file-add:before,
+    &.at-plus:before { content: '\f05d'; }
+    &.at-primitive-dot:before { content: '\f052'; }
+    &.at-primitive-square:before { content: '\f053'; }
+    &.at-pulse:before { content: '\f085'; }
+    &.at-question:before { content: '\f02c'; }
+    &.at-quote:before { content: '\f063'; }
+    &.at-radio-tower:before { content: '\f030'; }
+    &.at-repo-delete:before,
+    &.at-repo:before { content: '\f001'; }
+    &.at-repo-clone:before { content: '\f04c'; }
+    &.at-repo-force-push:before { content: '\f04a'; }
+    &.at-gist-fork:before,
+    &.at-repo-forked:before { content: '\f002'; }
+    &.at-repo-pull:before { content: '\f006'; }
+    &.at-repo-push:before { content: '\f005'; }
+    &.at-rocket:before { content: '\f033'; }
+    &.at-rss:before { content: '\f034'; }
+    &.at-ruby:before { content: '\f047'; }
+    &.at-search-save:before,
+    &.at-search:before { content: '\f02e'; }
+    &.at-server:before { content: '\f097'; }
+    &.at-settings:before { content: '\f07c'; }
+    &.at-shield:before { content: '\f0e1'; }
+    &.at-log-in:before,
+    &.at-sign-in:before { content: '\f036'; }
+    &.at-log-out:before,
+    &.at-sign-out:before { content: '\f032'; }
+    &.at-smiley:before { content: '\f0e7'; }
+    &.at-squirrel:before { content: '\f0b2'; }
+    &.at-star-add:before,
+    &.at-star-delete:before,
+    &.at-star:before { content: '\f02a'; }
+    &.at-stop:before { content: '\f08f'; }
+    &.at-repo-sync:before,
+    &.at-sync:before { content: '\f087'; }
+    &.at-tag-remove:before,
+    &.at-tag-add:before,
+    &.at-tag:before { content: '\f015'; }
+    &.at-tasklist:before { content: '\f0e5'; }
+    &.at-telescope:before { content: '\f088'; }
+    &.at-terminal:before { content: '\f0c8'; }
+    &.at-text-size:before { content: '\f0e3'; }
+    &.at-three-bars:before { content: '\f05e'; }
+    &.at-thumbsdown:before { content: '\f0db'; }
+    &.at-thumbsup:before { content: '\f0da'; }
+    &.at-tools:before { content: '\f031'; }
+    &.at-trashcan:before { content: '\f0d0'; }
+    &.at-triangle-down:before { content: '\f05b'; }
+    &.at-triangle-left:before { content: '\f044'; }
+    &.at-triangle-right:before { content: '\f05a'; }
+    &.at-triangle-up:before { content: '\f0aa'; }
+    &.at-unfold:before { content: '\f039'; }
+    &.at-unmute:before { content: '\f0ba'; }
+    &.at-unverified:before { content: '\f0e8'; }
+    &.at-verified:before { content: '\f0e6'; }
+    &.at-versions:before { content: '\f064'; }
+    &.at-watch:before { content: '\f0e0'; }
+    &.at-remove-close:before,
+    &.at-x:before { content: '\f081'; }
+    &.at-zap:before { content: '\26A1'; }
+  }
+}
